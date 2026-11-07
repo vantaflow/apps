@@ -145,16 +145,18 @@ footer{color:var(--muted);font-size:14px;padding:40px 0 48px}
   </section>
 
   <section id="ultra">
-    <h2>Android TV, téléphone et tablette</h2>
-    <p class="sub">Choisissez 32 bits pour la plupart des box d'entrée de gamme, 64 bits pour les téléphones et box récentes.</p>
+    <h2>Ultra TV : TV, téléphone, tablette et ordinateur</h2>
+    <p class="sub">Sur Android, choisissez 32 bits pour la plupart des box d'entrée de gamme, 64 bits pour les téléphones et box récentes.</p>
     <div class="grid">
       <article class="card">
         <div class="top"><div class="ico" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">📺</div>
           <div><h3>Ultra TV</h3><p>Lecteur IPTV Xtream Codes et M3U : guide TV, replay, pause du direct, profils, intégration Google TV.</p></div></div>
-        <div class="tags"><span class="tag">Android TV</span><span class="tag">Téléphone</span><span class="tag">Tablette</span></div>
+        <div class="tags"><span class="tag">Android TV</span><span class="tag">Téléphone</span><span class="tag">Tablette</span><span class="tag">macOS</span><span class="tag">Windows</span></div>
         <div class="actions">
           <a class="btn primary" href="https://github.com/vantaflow/ultra-tv/releases/latest/download/UltraTV-armeabi-v7a.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Box / TV 32 bits</a>
-          <a class="btn primary" href="https://github.com/vantaflow/ultra-tv/releases/latest/download/UltraTV-arm64-v8a.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>64 bits</a>
+          <a class="btn primary" href="https://github.com/vantaflow/ultra-tv/releases/latest/download/UltraTV-arm64-v8a.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Android 64 bits</a>
+          <a class="btn primary" id="ultra-mac" href="https://github.com/vantaflow/ultra-tv/releases/download/desktop-v1.2.37/UltraTV-1.2.37-mac-universal.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>macOS</a>
+          <a class="btn primary" id="ultra-win" href="https://github.com/vantaflow/ultra-tv/releases/download/desktop-v1.2.37/UltraTV-1.2.37-win-x64.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Windows</a>
           <a class="btn ghost" href="https://github.com/vantaflow/ultra-tv">En savoir plus</a>
         </div>
       </article>
@@ -210,6 +212,21 @@ footer{color:var(--muted);font-size:14px;padding:40px 0 48px}
   </section>
 </main>
 
+<script>
+// Ultra TV pour ordinateur : publications « desktop-v… » séparées ; on pointe vers la plus récente.
+(async () => {
+  try {
+    const r = await fetch("https://api.github.com/repos/vantaflow/ultra-tv/releases?per_page=50");
+    if (!r.ok) return;
+    const rel = (await r.json()).find(x => /^desktop-v/.test(x.tag_name) && !x.draft && !x.prerelease);
+    if (!rel) return;
+    const pick = re => rel.assets.find(a => re.test(a.name));
+    const mac = pick(/mac-universal\.dmg$/), win = pick(/win-x64\.exe$/);
+    if (mac) document.getElementById("ultra-mac").href = mac.browser_download_url;
+    if (win) document.getElementById("ultra-win").href = win.browser_download_url;
+  } catch (e) { /* lien de secours déjà en place */ }
+})();
+</script>
 <footer class="wrap">Applications développées par vantaflow · <a href="https://github.com/vantaflow">GitHub</a></footer>
 </body>
 </html>
