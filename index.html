@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Applications vantaflow</title>
+<meta name="description" content="Toutes les applications vantaflow : Kairo, Kairo Player, Kairo Files, Kairo Send Files, Kairo Cast, Ultra TV, KTV… Téléchargement direct de la dernière version.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Cpath d='M18 44V20l14 12 14-12v24' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f17;--bg2:#111827;--card:#151c2b;--card-h:#1b2436;--line:#263045;
+  --text:#e8edf6;--muted:#9aa6bb;--accent:#3b82f6;--accent-2:#60a5fa;--accent-ink:#fff;
+  --orange:#f97316;--green:#22c55e;--focus:#fbbf24;--radius:18px;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f5f7fb;--bg2:#ffffff;--card:#ffffff;--card-h:#f0f4fb;--line:#dde3ee;
+    --text:#0f172a;--muted:#55627a;--accent:#2563eb;--accent-2:#1d4ed8;--focus:#d97706;
+    color-scheme:light;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header.hero{background:radial-gradient(1200px 400px at 20% -10%,color-mix(in srgb,var(--accent) 35%,transparent),transparent),var(--bg2);border-bottom:1px solid var(--line)}
+.hero .wrap{padding-top:56px;padding-bottom:44px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.01em;font-size:15px;color:var(--muted);text-transform:uppercase}
+.brand svg{width:32px;height:32px}
+h1{font-size:clamp(30px,5vw,48px);line-height:1.1;margin:18px 0 12px;letter-spacing:-.02em}
+.lead{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:720px;margin:0}
+nav.jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+nav.jump a{text-decoration:none;font-weight:600;font-size:14px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
+nav.jump a:hover{background:var(--card-h)}
+section{padding:40px 0 8px}
+h2{font-size:22px;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:14px}
+.top{display:flex;gap:14px;align-items:flex-start}
+.ico{flex:0 0 52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:26px;color:#fff}
+.card h3{margin:0;font-size:19px}
+.card p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent-2)}
+.tag.dl{background:color-mix(in srgb,var(--orange) 16%,transparent);color:var(--orange)}
+.tag.soon{background:color-mix(in srgb,var(--muted) 18%,transparent);color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:10px 18px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid transparent}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{background:var(--accent-2)}
+.btn.ghost{border-color:var(--line);background:transparent}
+.btn.ghost:hover{background:var(--card-h)}
+.btn svg{width:18px;height:18px}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.help{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:8px}
+.help ol{margin:8px 0 0;padding-left:20px}
+.help li{margin:6px 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--card-h);border:1px solid var(--line);padding:1px 6px;border-radius:6px;font-size:.95em}
+footer{color:var(--muted);font-size:14px;padding:40px 0 48px}
+@media (max-width:640px){.hero .wrap{padding-top:36px;padding-bottom:30px}.grid{grid-template-columns:1fr}.btn{flex:1 1 auto;justify-content:center}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#2563eb"/><path d="M18 44V20l14 12 14-12v24" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      vantaflow
+    </div>
+    <h1>Applications vantaflow</h1>
+    <p class="lead">Toutes les applications au même endroit. Chaque bouton télécharge directement la dernière version : sans compte, sans publicité.</p>
+    <nav class="jump" aria-label="Sections">
+      <a href="#kairo">Android TV · Kairo</a>
+      <a href="#ultra">Ultra TV</a>
+      <a href="#desktop">Mac et Windows</a>
+      <a href="#web">Dans le navigateur</a>
+      <a href="#installer">Installer sur une box</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="kairo">
+    <h2>Android TV : la famille Kairo</h2>
+    <p class="sub">Pour box et téléviseurs Android TV / Google TV, Android 11 ou plus récent.</p>
+    <div class="grid">
+
+      <article class="card">
+        <div class="top"><div class="ico" style="background:linear-gradient(135deg,#2563eb,#7c3aed)">⌂</div>
+          <div><h3>Kairo</h3><p>Le launcher Android TV complet qui reste fluide sur les petites box : accueil façon Google TV, recommandations, personnalisation.</p></div></div>
+        <div class="tags"><span class="tag">Android TV</span><span class="tag dl">Downloader 5568887</span></div>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/vantaflow/kairo/releases/latest/download/kairo.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Télécharger l'APK</a>
+          <a class="btn ghost" href="https://vantaflow.github.io/kairo/">Présentation</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="top"><div class="ico" style="background:linear-gradient(135deg,#ef4444,#f97316)">▶</div>
+          <div><h3>Kairo Player</h3><p>Vidéos, photos, musique, PDF et textes de la box et des clés USB, avec reprise dans « À suivre ».</p></div></div>
+        <div class="tags"><span class="tag">Android TV</span></div>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/vantaflow/kairo/releases/latest/download/kairo-player.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Télécharger l'APK</a>
+          <a class="btn ghost" href="https://github.com/vantaflow/kairo#kairo-player">En savoir plus</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="top"><div class="ico" style="background:linear-gradient(135deg,#f59e0b,#eab308)">🗂</div>
+          <div><h3>Kairo Files</h3><p>Gestionnaire de fichiers de la box et des clés USB, pensé pour la télécommande : copier, déplacer, renommer, installer un APK.</p></div></div>
+        <div class="tags"><span class="tag">Android TV</span></div>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/vantaflow/kairo/releases/latest/download/kairo-files.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Télécharger l'APK</a>
+          <a class="btn ghost" href="https://github.com/vantaflow/kairo#kairo-files">En savoir plus</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="top"><div class="ico" style="background:linear-gradient(135deg,#10b981,#06b6d4)">⇄</div>
+          <div><h3>Kairo Send Files</h3><p>Fichiers, textes et liens du téléphone ou de l'ordinateur vers la TV, et inversement, par QR code. Rien à installer sur le téléphone.</p></div></div>
+        <div class="tags"><span class="tag">Android TV</span></div>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/vantaflow/kairo/releases/latest/download/kairo-send.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Télécharger l'APK</a>
+          <a class="btn ghost" href="https://github.com/vantaflow/kairo#kairo-send-files">En savoir plus</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="top"><div class="ico" style="background:linear-gradient(135deg,#0ea5e9,#2563eb)">⧉</div>
+          <div><h3>Kairo Cast</h3><p>L'écran du Mac sur la TV (recopie AirPlay), avec le son, sans limite de durée et sans bords noirs. Fonctionne aussi sans Kairo.</p></div></div>
+        <div class="tags"><span class="tag">Android TV</span><span class="tag dl">Downloader 2534592</span><span class="tag soon">Windows : bientôt</span></div>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/vantaflow/kairo-cast/releases/latest/download/kairo-cast.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Télécharger l'APK</a>
+          <a class="btn ghost" href="https://github.com/vantaflow/kairo-cast">En savoir plus</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="ultra">
+    <h2>Android TV, téléphone et tablette</h2>
+    <p class="sub">Choisissez 32 bits pour la plupart des box d'entrée de gamme, 64 bits pour les téléphones et box récentes.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="top"><div class="ico" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">📺</div>
+          <div><h3>Ultra TV</h3><p>Lecteur IPTV Xtream Codes et M3U : guide TV, replay, pause du direct, profils, intégration Google TV.</p></div></div>
+        <div class="tags"><span class="tag">Android TV</span><span class="tag">Téléphone</span><span class="tag">Tablette</span></div>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/vantaflow/ultra-tv/releases/latest/download/UltraTV-armeabi-v7a.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Box / TV 32 bits</a>
+          <a class="btn primary" href="https://github.com/vantaflow/ultra-tv/releases/latest/download/UltraTV-arm64-v8a.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>64 bits</a>
+          <a class="btn ghost" href="https://github.com/vantaflow/ultra-tv">En savoir plus</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="desktop">
+    <h2>Mac et Windows</h2>
+    <p class="sub">Archives prêtes à l'emploi : décompressez puis lancez l'application.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="top"><div class="ico" style="background:linear-gradient(135deg,#14b8a6,#22c55e)">K</div>
+          <div><h3>KTV</h3><p>Lecteur Xtream Codes pour ordinateur : direct, films, séries, guide des programmes, enregistrement.</p></div></div>
+        <div class="tags"><span class="tag">macOS Apple Silicon</span><span class="tag">Windows</span></div>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/vantaflow/ktv/releases/latest/download/KTV-macos-arm64.zip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>macOS</a>
+          <a class="btn primary" href="https://github.com/vantaflow/ktv/releases/latest/download/KTV-windows-x64.zip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Windows</a>
+          <a class="btn ghost" href="https://github.com/vantaflow/ktv">En savoir plus</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="web">
+    <h2>Dans le navigateur</h2>
+    <p class="sub">Rien à installer : tout se passe dans votre navigateur.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="top"><div class="ico" style="background:linear-gradient(135deg,#f43f5e,#f97316)">✎</div>
+          <div><h3>Atelier M3U</h3><p>Éditeur de playlists IPTV M3U : direct, films et séries.</p></div></div>
+        <div class="tags"><span class="tag">Web</span></div>
+        <div class="actions"><a class="btn primary" href="https://atelier-m3u.pages.dev">Ouvrir</a><a class="btn ghost" href="https://github.com/vantaflow/atelier-m3u">Code source</a></div>
+      </article>
+      <article class="card">
+        <div class="top"><div class="ico" style="background:linear-gradient(135deg,#6366f1,#0ea5e9)">⇆</div>
+          <div><h3>Convertix</h3><p>Convertisseur de fichiers par glisser-déposer, 100 % dans le navigateur : images, PDF, documents, audio, vidéo.</p></div></div>
+        <div class="tags"><span class="tag">Web</span></div>
+        <div class="actions"><a class="btn primary" href="https://convertix-eh9.pages.dev">Ouvrir</a><a class="btn ghost" href="https://github.com/vantaflow/convertix">Code source</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="installer">
+    <h2>Installer sur une box Android TV</h2>
+    <div class="help">
+      <ol>
+        <li>Sur la box, installez l'application <strong>Downloader</strong> depuis le Play Store.</li>
+        <li>Tapez le code indiqué sur la carte (par exemple <code>5568887</code> pour Kairo, <code>2534592</code> pour Kairo Cast), ou l'adresse du bouton de téléchargement.</li>
+        <li>Autorisez l'installation quand la box le demande, puis ouvrez l'application une première fois.</li>
+      </ol>
+      <p class="sub" style="margin:12px 0 0">Sans Downloader : copiez l'APK sur une clé USB et ouvrez-le avec Kairo Files ou un gestionnaire de fichiers.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">Applications développées par vantaflow · <a href="https://github.com/vantaflow">GitHub</a></footer>
+</body>
+</html>
